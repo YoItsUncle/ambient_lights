@@ -759,8 +759,8 @@ void process_melbank_frame(struct sound_effect *effect, ws2811_t *strip, const i
   int high_ignore = effect->mel_high_ignore;
   int effective_filters = n_filters - high_ignore - (ignore_low_bands + effect->mel_low_ignore);
   if (effective_filters < 1) effective_filters = 1; // guard
-  float db_min = -70.0f;  // Lower threshold to pick up quieter sounds
-  float db_max = -15.0f;  // Raise maximum to allow more headroom for loud sounds
+  float db_min = -60.0f;  // Lower threshold to pick up quieter sounds
+  float db_max = -20.0f;  // Raise maximum to allow more headroom for loud sounds
   float blend_prev = 0.25f;
 
   // Clear back buffer for safety for indices we may touch
